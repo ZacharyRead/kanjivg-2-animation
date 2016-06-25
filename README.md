@@ -17,7 +17,7 @@ http://creativecommons.org/licenses/by-sa/3.0/
 * kanjiVG :  https://github.com/KanjiVG/kanjivg (CC BY-SA 3.0) [unpack in /kanji/ folder]
 * svg.path:  https://pypi.python.org/pypi/svg.path [place in /path/ subfolder]
 
-#Usage
+##Usage
 
 If needed, edit the /kanji/ directory below with the proper path for the kanjiVG files, then update the /tmp3/ directory to indicate where the converted files should be placed. Please note that svg.path is very resource-intensive and very slow, so this script could take an extremely long time to parse the thousand svg files.
 
