@@ -14,7 +14,7 @@ http://creativecommons.org/licenses/by-sa/3.0/
 
 ##Prerequisites
 
-* kanjiVG :  https://github.com/KanjiVG/kanjivg (CC BY-SA 3.0) [unpack in /kanji/ folder]
+* kanjiVG :  https://github.com/KanjiVG/kanjivg (CC BY-SA 3.0) [replace the /kanji/ folder with the /kanji/ folder provided by kanjiVG]
 * svg.path:  https://pypi.python.org/pypi/svg.path [place in /path/ subfolder]
 
 ##Usage
