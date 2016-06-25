@@ -19,7 +19,9 @@ http://creativecommons.org/licenses/by-sa/3.0/
 
 ##Usage
 
-If needed, edit the /kanji/ directory below with the proper path for the kanjiVG files, then update the /tmp3/ directory to indicate where the converted files should be placed. Please note that svg.path is very resource-intensive and very slow, so this script could take an extremely long time to parse the thousand svg files.
+If needed, edit the /kanji/ directory in the Python file with whatever folder contains the kanjiVG files, then update the /converted/ directory to indicate where the converted files should be placed.
+
+Please note that svg.path is very resource-intensive and very slow, so this script could take an extremely long time to parse the thousand svg files.
 
 ##Similar projects:
 
