@@ -1,0 +1,1 @@
+After the script has run, you will find your animated SVGs in this folder.

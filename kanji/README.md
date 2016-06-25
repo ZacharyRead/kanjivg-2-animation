@@ -1,0 +1,1 @@
+Delete this file and unpack kanjiVG files into this folder.
