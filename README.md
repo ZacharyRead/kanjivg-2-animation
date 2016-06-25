@@ -1,6 +1,6 @@
 #KanjiVG to Animation
 By Zachary Read
-http://www.jlect.com
+https://www.jlect.com
 
 
 ##Description
