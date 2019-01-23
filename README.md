@@ -1,6 +1,7 @@
 
 # KanjiVG to Animation
-By Zachary Read
+
+By Zachary Read  
 https://www.jlect.com
 
 
@@ -24,7 +25,7 @@ If needed, edit the /kanji/ directory in the Python file with whatever folder co
 
 Please note that svg.path is very resource-intensive and very slow, so this script could take an extremely long time to parse the thousand svg files.
 
-## Similar projects:
+## Similar projects
 
 * https://github.com/mbilbille/dmak
 * https://github.com/Kimtaro/kanjivg2svg
