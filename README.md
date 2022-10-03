@@ -37,7 +37,7 @@ sudo apt install python3-pip
 pip install svg.path
 
 # Clone repository. This will also clone the KanjiVG project into a subdirectory.
-git clone https://github.com/ZacharyRead/kanjivg-2-animation.git
+git clone --recurse-submodules https://github.com/ZacharyRead/kanjivg-2-animation.git
 
 # Change directory and run Python script to create animated SVGs
 cd ./kanjivg-2-animation

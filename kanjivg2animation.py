@@ -5,7 +5,7 @@ import os
 import sys
 from svg.path import parse_path
 
-KANJI_SOURCE_FOLDER = './kanjivg/kanji'
+KANJI_SOURCE_FOLDER = './kanjivg/kanji/'
 KANJI_DESTINATION_FOLDER = './converted/'
 
 # A function that allows you to retrieve a string between two specified strings
