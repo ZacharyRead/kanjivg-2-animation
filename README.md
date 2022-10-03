@@ -8,6 +8,14 @@ https://www.jlect.com
 
 This Python 3 script will convert kanjiVG's SVG files into animations that reveal the stroke order of different kanji. All animations are done in accordance to the SVG animation standard, which is not supported by Internet Explorer. JavaScript is used only to provide the pause, play and reset features.
 
+### Samples
+
+![Sample 1 of animated kanji](examples/0589c-jlect.svg?raw=true "Sample 1 of animated kanji") 
+![Sample 2 of animated kanji](examples/05766-jlect.svg?raw=true "Sample 2 of animated kanji") 
+![Sample 3 of animated kanji](examples/05678-jlect.svg?raw=true "Sample 3 of animated kanji")
+
+Note: Pause, play and restart features are integrated into the SVG files and rely on JavaScript.
+
 ## License
 Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)
 
