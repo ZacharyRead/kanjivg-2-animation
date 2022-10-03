@@ -48,7 +48,23 @@ Please note that svg.path is very resource-intensive and very slow, so this scri
 
 ## Adding the SVG files to your website
 
-You can easily add the SVG files to any HTML page by embedding them directly without any other tags.
+You can easily add the SVG files to any HTML page by embedding them directly without any other tags. See the pseudo-code below.
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Page title</title>
+</head>
+<body>
+  <h1>Page title</h1>
+  <!-- Embed the SVG code directly here -->
+  <svg id="kvg-04e73" class="kanjivg" width="106" height="126" xmlns="http://www.w3.org/2000/svg" (...)>
+  (...)
+  </svg>
+</body>
+</html>
+```
 
 If you're using PHP, the [utf8_to_unicode function described in this article](http://web.archive.org/web/20130414004049/http://www.randomchaos.com/documents/?source=php_and_unicode) can be used to call the files. See example below:
 
@@ -68,11 +84,37 @@ if (file_exists($k2a_file_path)) {
 > :warning: While you can use an image tag (as shown below) to reference the SVG files, you will lose the JavaScript functionality.
 
 ```html
+<!-- Not recommended -->
 <img
   src="/converted/<FILENAME>-animated.svg"
   alt="Animated kanji character"
   height="100"
   width="100" />
+```
+
+## CSS tips
+
+To resize the SVG, you can use the CSS transform property as shown below. You may also want to use `transform-origin: 0% 50%;` (left) or `transform-origin: 100% 100%;` (right-floated) to adjust the position of the scaled element.
+
+```css
+.kanjivg {
+  transform: scale(2);
+}
+```
+
+To remove or change the border:
+
+```css
+/* Remove border entirely */
+.kanjivg rect {
+  stroke: none;
+}
+
+/* Change border color and thickness */
+.kanjivg rect {
+  stroke-width: 1;
+  stroke: #777;
+}
 ```
 
 ## Notes
