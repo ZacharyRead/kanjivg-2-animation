@@ -36,12 +36,8 @@ sudo apt install python3-pip
 # Install svg.path parsing library for Python
 pip install svg.path
 
-# Clone relevant repositories
-git clone https://github.com/KanjiVG/kanjivg.git
+# Clone repository
 git clone https://github.com/ZacharyRead/kanjivg-2-animation.git
-
-# Copy files over
-cp ./kanjivg/kanji/*.svg ./kanjivg-2-animation/kanji/
 
 # Change directory and run Python script to create animated SVGs
 cd ./kanjivg-2-animation
@@ -56,7 +52,7 @@ You can easily add the SVG files to any page using basic HTML:
 
 ```html
 <img
-  src="/converted/<FILENAME>-jlect.svg"
+  src="/converted/<FILENAME>-animated.svg"
   alt="Animated kanji character"
   height="100"
   width="100" />
@@ -68,7 +64,7 @@ If you're using PHP, the [utf8_to_unicode function described in this article](ht
 <?php
 $kanji = '食';
 $kanji_to_unicode = utf8_to_unicode($kanji);
-echo '<img src="/converted/' . $kanji_to_unicode . '-jlect.svg" alt="Animated kanji character" height="100" width="100" />';
+echo '<img src="/converted/' . $kanji_to_unicode . '-animated.svg" alt="Animated kanji character" height="100" width="100" />';
 ```
 
 ## Notes

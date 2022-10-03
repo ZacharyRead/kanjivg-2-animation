@@ -21,7 +21,6 @@
 import math
 import os
 import sys
-from svg.path import Path as path
 from svg.path import parse_path
 
 #A function that allows you to retrieve a string between two specified strings
@@ -34,10 +33,10 @@ def find_between(s, first, last):
         return ""
 
 #Iterate through each svg file in the kanji directory.
-for file in os.listdir("./kanji"):
+for file in os.listdir("./kanjivg/kanji"):
     #Our source and target files and directories
-    source_file = open("./kanji/" + file, 'r', encoding="utf8")
-    target_file = open("./converted/" + file[:-4] + '-jlect.svg', 'w+', encoding="utf8")
+    source_file = open("./kanjivg/kanji/" + file, 'r', encoding="utf8")
+    target_file = open("./converted/" + file[:-4] + '-animated.svg', 'w+', encoding="utf8")
 
     #The array that we will use to build the various parts comprising the svg
     svg_build_array = []
