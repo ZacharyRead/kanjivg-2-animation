@@ -6,7 +6,7 @@
 #
 #Prerequisites:
 #              kanjiVG :  https://github.com/KanjiVG/kanjivg (CC BY-SA 3.0) [unpack in /kanji/ folder]
-#              svg.path:  https://pypi.python.org/pypi/svg.path [place in /path/ subfolder]
+#              svg.path:  https://pypi.python.org/pypi/svg.path
 #
 #Usage:
 #              If needed, edit the /kanji/ directory below with the proper path for the kanjiVG files,
@@ -21,8 +21,8 @@
 import math
 import os
 import sys
-sys.path.append('path')
-import path
+from svg.path import Path as path
+from svg.path import parse_path
 
 #A function that allows you to retrieve a string between two specified strings
 def find_between(s, first, last):
@@ -34,10 +34,10 @@ def find_between(s, first, last):
         return ""
 
 #Iterate through each svg file in the kanji directory.
-for file in os.listdir("/kanji"):
+for file in os.listdir("./kanji"):
     #Our source and target files and directories
-    source_file = open("/kanji/" + file, 'r', encoding="utf8")
-    target_file = open("/converted/" + file[:-4] + '-jlect.svg', 'w+', encoding="utf8")
+    source_file = open("./kanji/" + file, 'r', encoding="utf8")
+    target_file = open("./converted/" + file[:-4] + '-jlect.svg', 'w+', encoding="utf8")
 
     #The array that we will use to build the various parts comprising the svg
     svg_build_array = []
@@ -71,7 +71,7 @@ for file in os.listdir("/kanji"):
     
     #Then we handle the black kanji strokes, which will be animated in the foreground
     for b in dpath:
-        path_length = path.parse_path(b).length()
+        path_length = parse_path(b).length()
         stroke_length = 150
         
         #Change the stroke length if the path length exceeds our expectations
@@ -86,7 +86,7 @@ for file in os.listdir("/kanji"):
         svg_build_array.append('<path d="' + b + '" class="stroke" stroke-dasharray="' + str(stroke_length) + '">')
         
         #Hide the black stroke for a specified duration (dur)
-        if i is not 0.0:
+        if i != 0.0:
             svg_build_array.append('<set attributeName="opacity" to="0" dur="' + str(i) + 's" />')
         
         #Animate the black stroke after a specified duration (begin)
