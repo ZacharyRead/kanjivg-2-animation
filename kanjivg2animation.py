@@ -114,11 +114,13 @@ for file in os.listdir(KANJI_SOURCE_FOLDER):
             i += 2.0 # TODO: REPLACE THESE WITH FORMULA? User-changeable speed?
 
     # Add the Pause/Play and Reset buttons.
-    svg_build_array.append('<text x="90" y="120" id="reset">⟳</text><text x="70" y="120" id="pause">◼</text>')
+    svg_build_array.append(
+        f'<text x="90" y="120" id="reset-kvg-{file[:-4]}">⟳</text><text x="70" y="120" id="pause-kvg-{file[:-4]}">◼</text>'
+        )
     
     # Minified JavaScript that handles the above buttons
     svg_build_array.append('<script type="text/javascript"><![CDATA[') #should this be text/javascript or text/ecmascript?
-    svg_build_array.append('function RecurringTimer(e,t){var n,r,i=t;this.pause=function(){window.clearTimeout(n);i-=new Date-r};var s=function(){r=new Date;n=window.setTimeout(function(){i=t;s();e()},i)};this.clear=function(){window.clearTimeout(n);i=t;n=window.setTimeout(function(){i=t;s();e()},i)};this.resume=s;this.resume()}function invoketimer(){timer=new RecurringTimer(function(){svg.setCurrentTime(0)},' + str(float((i*1000) + 1000)) + ')}var svg=document.getElementById("kanjivg");var pause=document.getElementById("pause");var reset=document.getElementById("reset");var timer;invoketimer();reset.onclick=function(){svg.setCurrentTime(0);timer.clear();svg.unpauseAnimations();pause.innerHTML = "◼";};pause.onclick=function(){if(svg.animationsPaused()){svg.unpauseAnimations();timer.resume();pause.innerHTML="◼"}else{svg.pauseAnimations();timer.pause();pause.innerHTML="▶"}}')
+    svg_build_array.append('function RecurringTimer(e,t){var n,r,i=t;this.pause=function(){window.clearTimeout(n);i-=new Date-r};var s=function(){r=new Date;n=window.setTimeout(function(){i=t;s();e()},i)};this.clear=function(){window.clearTimeout(n);i=t;n=window.setTimeout(function(){i=t;s();e()},i)};this.resume=s;this.resume()}function invoketimer(){timer=new RecurringTimer(function(){svg.setCurrentTime(0)},' + str(float((i*1000) + 1000)) + ')}var svg=document.getElementById("kvg-' + {file[:-4]} + '");var pause=document.getElementById("pause-kvg-' + {file[:-4]} + '");var reset=document.getElementById("reset-kvg-' + {file[:-4]} + '");var timer;invoketimer();reset.onclick=function(){svg.setCurrentTime(0);timer.clear();svg.unpauseAnimations();pause.innerHTML = "◼";};pause.onclick=function(){if(svg.animationsPaused()){svg.unpauseAnimations();timer.resume();pause.innerHTML="◼"}else{svg.pauseAnimations();timer.pause();pause.innerHTML="▶"}}')
     svg_build_array.append(']]></script>')
 
     # Finish handling the svg

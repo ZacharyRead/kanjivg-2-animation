@@ -48,7 +48,24 @@ Please note that svg.path is very resource-intensive and very slow, so this scri
 
 ## Adding the SVG files to your website
 
-You can easily add the SVG files to any page using basic HTML:
+You can easily add the SVG files to any HTML page by embedding them directly without any other tags.
+
+If you're using PHP, the [utf8_to_unicode function described in this article](http://web.archive.org/web/20130414004049/http://www.randomchaos.com/documents/?source=php_and_unicode) can be used to call the files. See example below:
+
+```php
+<?php
+
+$kanji = '食';
+$kanji_to_unicode = str_replace('u', '0', utf8_to_unicode($kanji));
+$k2a_directory = $_SERVER['DOCUMENT_ROOT'] . '/kanjivg-2-animation/converted/';
+$k2a_file_path = $k2a_directory . $kanji_to_unicode . '-animated.svg';
+
+if (file_exists($k2a_file_path)) {
+  include($k2a_file_path);
+}
+```
+
+> :warning: While you can use an image tag (as shown below) to reference the SVG files, you will lose the JavaScript functionality.
 
 ```html
 <img
@@ -56,15 +73,6 @@ You can easily add the SVG files to any page using basic HTML:
   alt="Animated kanji character"
   height="100"
   width="100" />
-```
-
-If you're using PHP, the [utf8_to_unicode function described in this article](http://web.archive.org/web/20130414004049/http://www.randomchaos.com/documents/?source=php_and_unicode) can be used to call the files. See example below:
-
-```php
-<?php
-$kanji = '食';
-$kanji_to_unicode = utf8_to_unicode($kanji);
-echo '<img src="/converted/' . $kanji_to_unicode . '-animated.svg" alt="Animated kanji character" height="100" width="100" />';
 ```
 
 ## Notes
