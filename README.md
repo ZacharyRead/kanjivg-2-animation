@@ -21,10 +21,10 @@ Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)
 
 http://creativecommons.org/licenses/by-sa/3.0/
 
-## Prerequisites
+## Dependencies
 
-* kanjiVG :  https://github.com/KanjiVG/kanjivg (CC BY-SA 3.0) [replace the /kanji/ folder with the /kanji/ folder provided by kanjiVG]
-* svg.path:  https://pypi.python.org/pypi/svg.path
+* KanjiVG :  https://github.com/KanjiVG/kanjivg (CC BY-SA 3.0)
+* svg.path:  https://pypi.org/project/svg.path/
 
 ## Install and run steps
 
@@ -36,7 +36,7 @@ sudo apt install python3-pip
 # Install svg.path parsing library for Python
 pip install svg.path
 
-# Clone repository
+# Clone repository. This will also clone the KanjiVG project into a subdirectory.
 git clone https://github.com/ZacharyRead/kanjivg-2-animation.git
 
 # Change directory and run Python script to create animated SVGs
@@ -44,7 +44,7 @@ cd ./kanjivg-2-animation
 python3 ./kanjivg2animation.py
 ```
 
-Please note that svg.path is very resource-intensive and very slow, so this script could take an extremely long time to parse the thousand svg files. Don't be surprised if takes upwards of an hour.
+Please note that svg.path is very resource-intensive and very slow, so this script could take an extremely long time to parse the thousand svg files. Don't be surprised if it takes a couple hours.
 
 ## Adding the SVG files to your website
 
