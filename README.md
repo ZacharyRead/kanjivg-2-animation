@@ -8,6 +8,8 @@ https://www.jlect.com
 
 This Python 3 script will convert kanjiVG's SVG files into animations that reveal the stroke order of different kanji. All animations are done in accordance to the SVG animation standard, which is not supported by Internet Explorer. JavaScript is used only to provide the pause, play and reset features.
 
+Last tested on Ubuntu 22.04.1 LTS with Python 3.10.6 and svg.path 6.2.
+
 ### Samples
 
 ![Sample 1 of animated kanji](examples/0589c-jlect.svg?raw=true "Sample 1 of animated kanji") 
@@ -44,7 +46,7 @@ cd ./kanjivg-2-animation
 python3 ./kanjivg2animation.py
 ```
 
-Please note that svg.path is very resource-intensive and very slow, so this script could take an extremely long time to parse the thousand svg files. Don't be surprised if it takes a couple hours.
+Please note that svg.path is very resource-intensive and very slow. Don't be surprised if it takes a couple hours to process the 12,000+ files.
 
 ## Adding the SVG files to your website
 
@@ -119,7 +121,7 @@ To remove or change the border:
 
 ## Notes
 
-You can edit the file `kanjivg2animation.py` to change the source directory (`/kanji/`) or the destination directory (`/converted/`) as needed.
+You can edit the file `kanjivg2animation.py` to change the source directory (`./kanjivg/kanji/`) or the destination directory (`./converted/`) as needed.
 
 ## Similar projects
 
